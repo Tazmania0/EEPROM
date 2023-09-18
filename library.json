@@ -19,6 +19,6 @@
   "license": "GPL",
   "homepage": "https://github.com/Tazmania0/EEPROM",
   "frameworks": "arduino",
-  "platforms": "ststm32,stm32"
+  "platforms": "ststm32,stm32",
   "headers": ["EEPROM.h", "flash_stm32.h"]
 }
