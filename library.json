@@ -1,0 +1,24 @@
+{
+  "name": "EEPROM",
+  "version": "0.0.1",
+  "description": "Emulated EEPROM based on STM32 application note AN3969 (eeprom emulation with wear leveling)",
+  "keywords": "Emulated, EEPROM, STM32, wear,flash-storage,flashstorage,storage,STM32F4",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Tazmania0/EEPROM.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Atanas Tzvetkov",
+      "email": "tzmail2000@gmail.com",
+	  "maintainer": true
+    }
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/Tazmania0/EEPROM",
+  "frameworks": "arduino",
+  "platforms": "ststm32,stm32"
+  "headers": ["EEPROM.h", "flash_stm32.h"]
+}
