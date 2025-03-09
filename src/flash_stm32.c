@@ -70,7 +70,7 @@ FLASH_Status FLASH_ProgramHalfWord(uint32_t Address, uint16_t Data) {
      __enable_irq(); // Re-enable interrupts before exiting
       return status;
     }
-    //__HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR);
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR);
     status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_HALFWORD, Address, Data);
 
     HAL_FLASH_Lock();
