@@ -40,6 +40,7 @@
   status = HAL_FLASH_Unlock();
   if (status != FLASH_COMPLETE)
   {
+    __enable_irq(); // Re-enable interrupts before exiting
     return status;
   }
 
