@@ -64,15 +64,17 @@ FLASH_Status FLASH_ProgramHalfWord(uint32_t Address, uint16_t Data) {
 
   if (IS_FLASH_ADDRESS(Address))
   {
-    
+    __disable_irq();
     if ((status = HAL_FLASH_Unlock()) != FLASH_COMPLETE)
     {
+     __enable_irq(); // Re-enable interrupts before exiting
       return status;
     }
     //__HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR | FLASH_FLAG_PGSERR);
     status = HAL_FLASH_Program(FLASH_TYPEPROGRAM_HALFWORD, Address, Data);
 
     HAL_FLASH_Lock();
+   __enable_irq(); 
   }
   return status;
 }
