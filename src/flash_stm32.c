@@ -36,6 +36,7 @@
   EraseInitStruct.Banks = 1U;
 
   //try to unlock flash
+ __disable_irq();  // Disable interrupts  
   status = HAL_FLASH_Unlock();
   if (status != FLASH_COMPLETE)
   {
@@ -46,6 +47,7 @@
   status = HAL_FLASHEx_Erase(&EraseInitStruct, &PAGEError);
 
   HAL_FLASH_Lock();
+  __enable_irq();   // Re-enable interrupts
   return status;
 }
 
